@@ -1,0 +1,78 @@
+/* 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.container text-center{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/gamebg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+.col{
+    background: none;
+} */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+body{
+    background-color: rgb(13, 32, 65);
+    /* background-repeat: no-repeat; */
+    background-position:center;
+    background-size: cover;
+
+}
+.container{
+    height: 100vh;
+    width: 100%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .container{
+    width: 700px;
+    height: 400px;
+    background-image: url("../images/formbg.png");
+    background-size: 100%;
+    background-position: 50% 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:rgb(212, 212, 214);
+    background-repeat: no-repeat; */
+/* }  */
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    
+}
+button{
+   background-color: rgba(255, 255, 255, 0.8);
+   border: none;
+    width: 200px;
+
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: rgb(13, 66, 111);
+}
+button:hover{
+    background-color: rgb(6, 53, 124);
+    border: groove;
+    border-color: rgb(228, 206, 10);
+    color: aliceblue;
+}

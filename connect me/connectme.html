@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="connectme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="background">
+    <div class="container">
+        <h1 class="form-title">CONNECT ME</h1>
+        <!-- <form id="submit-form" action="">
+        <div class="main-user-info">
+            <div class="user-input-box">
+                <label for="Name" >Full Name</label>
+                <input type="text"
+                 id="Name" 
+                 name="Name" 
+                 placeholder="Enter Full Name" />
+            </div>
+            <div class="user-input-box">
+                <label for="Email">Email</label>
+                <input type="text"
+                 id="Email" 
+                 name="Email" 
+                 placeholder="Enter Email" />
+            </div>
+            <div class="user-input-box">
+                <label for="Phone">Phone Numer</label>
+                <input type="text"
+                 id="Phone" 
+                 name="Phone" 
+                 placeholder="Enter PhoneN Numner" />
+            </div>
+            <div class="user-input-box" >
+                <label for="message">Message</label>
+                <input type="text"
+                 id="message" 
+                 name="message" 
+                 placeholder="Enter Message" />
+            </div>
+            <div class="form-submit-btn">
+                <input type="submit" value="Connect">
+            </div>
+        </div>
+    </form> -->
+    <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch ">
+
+        <form name="sentMessage" id="submit-form" role="form" class="js-email-form">
+          <div class="row">
+            <div class="form-group control-group col-md-6">
+                <label for="Name" >Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="required"
+                onkeyup="validateName()" />
+              <span id="name-error"></span>
+              <p class="help-block text-danger"></p>
+            </div>
+
+            <div class="form-group control-group col-md-6">
+                <label for="Email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                required="required" onkeyup="validateEmail()" />
+              <span id="email-error"></span>
+              <p class="help-block text-danger"></p>
+            </div>
+
+
+            <div class="form-group control-group">
+                <label for="Phone">Phone Numer</label>
+              <input type="text" class="form-control" name="phone number" id="phone" placeholder="Phone Number"
+                required="required" onkeyup="validatePhone()" />
+              <span id="phone-error"></span>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="form-group control-group">
+                <label for="message">Message</label>
+              <textarea class="form-control" name="message" rows="1" id="msg" placeholder="Message"
+                required="required"></textarea>
+              <p class="help-block text-danger"></p>
+
+            </div>
+            <div class="form-submit-btn">
+                <input type="submit" value="Connect">
+            </div>
+          </div>
+    </div>
+    <script>
+
+var nameError = document.getElementById('name-error')
+var phoneError = document.getElementById('phone-error')
+var emailError = document.getElementById('email-error')
+function validateName() {
+    var name = document.getElementById('name').value;
+
+    if (name.length == 0) {
+        nameError.innerHTML = 'Name is required';
+        return false;
+    }
+    if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
+        nameError.innerHTML = 'Write full name';
+        return false;
+    }
+    nameError.innerHTML = '';
+    return true;
+}
+function validateEmail() {
+    var email = document.getElementById('email').value;
+
+    if (email.length == 0) {
+        emailError.innerHTML = 'email is required';
+        return false;
+    }
+    if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+        emailError.innerHTML = 'enter valid email';
+        return false;
+    }
+    emailError.innerHTML = '';
+    return true;
+}
+function validatePhone() {
+    var phone = document.getElementById('phone').value;
+
+    if (phone.length == 0) {
+        phoneError.innerHTML = 'Phone number is required';
+        return false;
+    }
+
+    if (!phone.match(/^[0-9]{10}$/)) {
+        phoneError.innerHTML = 'Phone Number might be 10 Digit';
+        return false;
+    }
+    phoneError.innerHTML = '';
+    return true;
+}
+
+function validateForm() {
+    if (!validateName() || !validatePhone() || !validateEmail()) {
+        submitError.style.display = 'block';
+        setTimeout(function () { submitError.style.display = 'none'; }, 3000);
+        return false;
+    }
+}
+
+
+
+
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbyRBVkA_0SrFLYWlYcFe3uCiGOR-Vp8_HJWgRlK5c1ikSoy5wTrePmR2ac_QB7YFNlg/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

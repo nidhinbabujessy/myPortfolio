@@ -1,0 +1,41 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/connectmebg.webp");
+    /* background-repeat: no-repeat; */
+    background-position:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    
+}
+h1 {
+    text-shadow: 2px 2px 8px black;
+  }
+  
+h5 {
+    text-shadow: 2px 2px 8px black;
+  }
+
+img{
+    cursor: pointer;
+}
+img:hover{
+ border:white groove;
+ 
+}
