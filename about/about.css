@@ -31,3 +31,8 @@ h1 {
 h5 {
     text-shadow: 2px 2px 8px black;
   }
+
+.social a{
+    padding-top: 20px;
+    margin-right: 20px;
+}
